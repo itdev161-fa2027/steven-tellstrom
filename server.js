@@ -1,10 +1,13 @@
 import express from 'express';
+import connectDatabase from './config/db.js';
 
 //init express app
-
 const app = express();
 
-//api endpoints
+//connect to the database
+connectDatabase();
+
+//API endpoints
 app.get('/', (req, res) =>
     res.send('http get request sent to root api endpoint') 
 );
