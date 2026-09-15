@@ -7,6 +7,8 @@ const app = express();
 //connect to the database
 connectDatabase();
 
+app.use(express.json({extended: false }));
+
 //API endpoints
 app.get('/', (req, res) =>
     res.send('http get request sent to root api endpoint') 
